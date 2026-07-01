@@ -12,6 +12,7 @@ function Signup() {
         <label>password</label>
         <input type="password" placeholder="password" />
       </div>
+      <button type="submit">signup</button>
     </div>
   );
 }
