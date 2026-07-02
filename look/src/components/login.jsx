@@ -1,4 +1,4 @@
-import useState from "react";
+import { useState } from "react";
 
 function Login() {
   const [credentials, setCredentials] = useState({
@@ -6,16 +6,16 @@ function Login() {
     password: " ",
   });
 
-  const [message,setMessage] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleChange = (e) => {
-    setCredentials({...credentials, [e.target.name]: e,target.value});
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) =>{
-    e,preventDefault();
-    //perform login logic here and send to server 
-  }
+  const handleSubmit = (e) => {
+    (e, preventDefault());
+    //perform login logic here and send to server
+  };
 
   return (
     <div>
