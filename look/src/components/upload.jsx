@@ -1,12 +1,11 @@
 import { useState } from "react";
 
-export default function ImageUpload() {
+export default function ImageUpload({ onNavigate }) {
   const [selectedImage, setSelectedImage] = useState(null);
   const [previewUrl, setPreviewUrl] = useState("");
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-
     if (file) {
       setSelectedImage(file);
       setPreviewUrl(URL.createObjectURL(file));
@@ -30,6 +29,7 @@ export default function ImageUpload() {
 
       if (response.ok) {
         alert("Picture uploaded successfully!");
+        onNavigate("landing");
       } else {
         alert("Upload failed.");
       }
@@ -40,6 +40,10 @@ export default function ImageUpload() {
 
   return (
     <div>
+      <button type="button" onClick={() => onNavigate("landing")}>
+        Back to Home
+      </button>
+
       <h2>Upload Profile Picture</h2>
       <form onSubmit={handleUploadSubmit}>
         <input
