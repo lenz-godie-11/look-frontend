@@ -30,6 +30,10 @@ function Signup() {
         <label>password</label>
         <input type="password" placeholder="password" />
       </div>
+      <div>
+        <label>confirm</label>
+        <input type="password" placeholder="confirm" />
+      </div>
       <button type="submit">signup</button>
     </div>
   );
