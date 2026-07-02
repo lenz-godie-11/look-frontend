@@ -1,4 +1,22 @@
+import useState from "react";
+
 function Signup() {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    confirm: "",
+  });
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //perform signup logic here and sent to server
+  };
+
   return (
     <div>
       <div>
